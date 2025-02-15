@@ -1,0 +1,26 @@
+{
+    "result" : "ok",
+    "value" : [
+        {
+            "idx": 1,
+            "ani_idx" : 1,
+            "title" : "[PV 공개] 귀멸의 칼날: 도공마을 편",
+            "description" : "[귀멸의 칼날: 도공 마을편] 4월 10일 월요일 밤 11시 첫 방송!",
+            "video" : "https://www.youtube.com/embed/O-IWJk6K8IY?si=0kTv4VFza6oGaOMQ"
+        },
+        {
+            "idx": 2,
+            "ani_idx" : 2,
+            "title" : "【주술회전 2기】 「회옥・옥절」 PV 1탄",
+            "description" : "TV 최초 한일 동시 [애니박스] 7/7(금) 새벽 1시 첫방송",
+            "video" : "https://www.youtube.com/embed/1ixql878ZoA?si=JhkD-QETClrV49e7"
+        },
+        {
+            "idx": 3,
+            "ani_idx" : 3,
+            "title" : "【최애의 아이】 2차 PV_매주 (수) 밤 12시",
+            "description" : "23년 2분기 신작 매주 (수) 밤 12시!",
+            "video" : "https://www.youtube.com/embed/1eprlTPU5fo?si=BZ3zC6S4uEF7szTT"
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "result" : "ok",
+    "value" : [
+        {
+            "idx": 1,
+            "title" : "스파이 패밀리",
+            "image" : "/img/popular_1.jpg",
+            "href" : "#"
+        },
+        {
+            "idx": 2,
+            "title" : "하이큐",
+            "image" : "/img/popular_2.jpg",
+            "href" : "#"
+        },
+        {
+            "idx": 3,
+            "title" : "마슐",
+            "image" : "/img/popular_3.jpg",
+            "href" : "#"
+        },
+        {
+            "idx": 4,
+            "title" : "원피스",
+            "image" : "/img/popular_4.jpg",
+            "href" : "#"
+        },
+        {
+            "idx": 5,
+            "title" : "나루토",
+            "image" : "/img/popular_5.jpg",
+            "href" : "#"
+        },
+        {
+            "idx": 6,
+            "title" : "블리츠",
+            "image" : "/img/popular_6.jpg",
+            "href" : "#"
+        },
+        {
+            "idx": 7,
+            "title" : "체이소맨",
+            "image" : "/img/popular_7.jpg",
+            "href" : "#"
+        },
+        {
+            "idx": 8,
+            "title" : "드래곤볼",
+            "image" : "/img/popular_8.jpg",
+            "href" : "#"
+        }
+    ]
+}
+

@@ -1,0 +1,50 @@
+[animation]
+idx number                      // 작품 번호
+title varchar                   // 작품 명
+
+[animation_detail]
+idx                             // 작품 상세 번호
+animation_idx                   // 작품 번호
+title                           // 작품 상세 명
+total_episode                   // 총 에피소드 수
+description varchar()           // 설명
+rating number                   // 등급
+thumbnail varchar()             // 썸네일 이미지
+recommend int                   // 추천 수
+grade                           // 적퓸 평점
+screen_status                   // 작품 상영 상태
+screen_quarter                  // 작품 상영 분기
+screen_start_date               // 작품 상영 시작 날짜
+screen_end_date                 // 작품 상영 종료 날짜
+create_date                     // 작품 추가 날짜
+update_date                     // 작품 업데이트 날짜
+
+
+[video]
+idx                             // 비디오 번호
+animation_detail_idx            // 작품 상세 번호
+episode_number int              // 화수(1화, 2화)
+video_url varchar                   // 비디오 url
+count int                       // 조회수
+
+[image]
+idx                             // 이미지 번호
+animation_detail_idx            // 작품 상세 번호
+bg                              // bg 이미지
+bg_sm                           // bg 이미지( small 사이즈 )
+sub1                            // sub 이미지1
+sub2                            // sub 이미지2
+
+[banner]
+idx
+title
+banner_url
+
+[best]
+
+[popular]
+
+[category]
+
+[event]
+
