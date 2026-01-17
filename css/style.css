@@ -1,0 +1,110 @@
+/* 기본 스타일 초기화 */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Pretendard', sans-serif; line-height: 1.6; color: #333; background-color: #f9f9f9; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* 레이아웃 */
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 80px 0; border-bottom: 1px solid #eee; }
+
+        /* 헤더/네비게이션 */
+        header { background: #fff; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        nav { display: flex; justify-content: space-between; align-items: center; height: 60px; position: relative; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #2d3436; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a:hover { color: #0984e3; transition: 0.3s; }
+
+        /* 햄버거 버튼 (기본 숨김) */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            padding: 5px;
+        }
+        .menu-toggle .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* 히어로 섹션 */
+        #home { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #74b9ff, #0984e3); color: white; }
+        .hero-content h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero-content p { font-size: 1.2rem; opacity: 0.9; }
+
+        /* 섹션 제목 */
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2rem; }
+
+        /* 기술 스택 */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; text-align: center; }
+        .skill-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .skill-card:hover { transform: translateY(-5px); }
+
+        /* 프로젝트 섹션 */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .project-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .project-img { height: 200px; background: #dfe6e9; display: flex; align-items: center; justify-content: center; color: #b2bec3; }
+        .project-info { padding: 20px; }
+        .project-info h3 { margin-bottom: 10px; }
+        .project-tags { margin-top: 15px; }
+        .tag { display: inline-block; background: #eee; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 5px; }
+
+        /* 연락처 */
+        #contact { text-align: center; }
+        .contact-links { margin-top: 20px; }
+        .contact-links a { margin: 0 15px; font-size: 1.1rem; color: #0984e3; font-weight: bold; }
+
+        /* 반응형 스타일 */
+        @media (max-width: 768px) {
+            .menu-toggle { display: flex; }
+
+            /* 애니메이션을 위한 nav-links 설정 */
+            .nav-links {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                flex-direction: column;
+                gap: 0;
+                text-align: center;
+                max-height: 0; /* 초기 상태: 높이 0 */
+                overflow: hidden; /* 넘치는 내용 숨김 */
+                opacity: 0; /* 투명하게 */
+                transition: all 0.4s ease-in-out; /* 부드러운 전환 효과 */
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            /* 메뉴 활성화 상태 */
+            .nav-links.active {
+                width: 100%;
+                max-height: 400px; /* 메뉴가 다 펼쳐질 충분한 높이 */
+                opacity: 1;
+                padding: 20px 0;
+            }
+
+            .nav-links li {
+                padding: 15px 0;
+                width: 100%;
+            }
+
+            .hero-content h1 { font-size: 2rem; }
+            
+            /* 햄버거 버튼 'X' 모양 변형 애니메이션 (선택 사항) */
+            .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+            .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+            .hero-content h1 { font-size: 2rem; margin-bottom: 10px; }
+            .hero-content p { font-size: 1.2rem; opacity: 0.9; }
+        }
+
+
+        @media (max-width: 520px) {
+            .hero-content h1 { font-size: 1.4rem; margin-bottom: 10px; }
+            .hero-content p { font-size: 1rem; opacity: 0.9; }
+        }
