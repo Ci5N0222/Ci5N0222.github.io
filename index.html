@@ -12,7 +12,9 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">PORTFOLIO</div>
+                <div class="logo">
+                    <li><a href="#home">C-ON's Repository</a></li>
+                </div>
                 <div class="menu-toggle" id="mobile-menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -20,11 +22,11 @@
                     <span class="bar"></span>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#career">Career</a></li>
+                    <li><a href="#license">License</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -120,47 +122,96 @@
         <!-- Projectts -->
         <section id="projects">
             <h2 class="section-title">Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-img">Project Image</div>
-                    <div class="project-info">
-                        <h3>프로젝트 명 1</h3>
-                        <p>프로젝트에 대한 간단한 설명입니다. 어떤 기능을 구현했고 무엇을 배웠는지 적어주세요.</p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Firebase</span>
+            <div class="project-nav">
+                <div>Works</div>
+                <div>Education</div>
+                <div>Study</div>
+            </div>  
+            <div id="works">
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-img">Project Image</div>
+                        <div class="project-info">
+                            <h3>프로젝트 명 1</h3>
+                            <p>프로젝트에 대한 간단한 설명입니다. 어떤 기능을 구현했고 무엇을 배웠는지 적어주세요.</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">Project Image</div>
+                        <div class="project-info">
+                            <h3>프로젝트 명 2</h3>
+                            <p>API를 연동하여 실시간 데이터를 처리하는 대시보드를 제작했습니다.</p>
+                            <div class="project-tags">
+                                <span class="tag">Vue.js</span>
+                                <span class="tag">D3.js</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">Project Image</div>
-                    <div class="project-info">
-                        <h3>프로젝트 명 2</h3>
-                        <p>API를 연동하여 실시간 데이터를 처리하는 대시보드를 제작했습니다.</p>
-                        <div class="project-tags">
-                            <span class="tag">Vue.js</span>
-                            <span class="tag">D3.js</span>
+            </div>
+            <div id="education" style="display: none;">
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-img">Project Image</div>
+                        <div class="project-info">
+                            <h3>프로젝트 명 1</h3>
+                            <p>프로젝트에 대한 간단한 설명입니다. 어떤 기능을 구현했고 무엇을 배웠는지 적어주세요.</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">Project Image</div>
+                        <div class="project-info">
+                            <h3>프로젝트 명 2</h3>
+                            <p>API를 연동하여 실시간 데이터를 처리하는 대시보드를 제작했습니다.</p>
+                            <div class="project-tags">
+                                <span class="tag">Vue.js</span>
+                                <span class="tag">D3.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="study" style="display: none;">
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-img">Project Image</div>
+                        <div class="project-info">
+                            <h3>프로젝트 명 1</h3>
+                            <p>프로젝트에 대한 간단한 설명입니다. 어떤 기능을 구현했고 무엇을 배웠는지 적어주세요.</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">Project Image</div>
+                        <div class="project-info">
+                            <h3>프로젝트 명 2</h3>
+                            <p>API를 연동하여 실시간 데이터를 처리하는 대시보드를 제작했습니다.</p>
+                            <div class="project-tags">
+                                <span class="tag">Vue.js</span>
+                                <span class="tag">D3.js</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contract -->
-        <section id="contact">
-            <h2 class="section-title">Contact</h2>
-            <p>언제든 연락해 주세요!</p>
-            <div class="contact-links">
-                <a href="mailto:email@example.com">Email</a>
-                <a href="https://github.com/yourid" target="_blank">GitHub</a>
-                <a href="https://blog.naver.com/yourid" target="_blank">Blog</a>
-            </div>
-        </section>
     </div>
 
     <!-- Footer -->
     <footer style="text-align: center; padding: 20px; color: #999; font-size: 0.9rem;">
-        &copy; 2024 [Your Name]. All rights reserved.
+        &copy; 2024 [ C-ON Noh ] All rights reserved.
     </footer>
 
 </body>
