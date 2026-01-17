@@ -15,4 +15,43 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.classList.remove('active');
         });
     });
+
+
+    // Project 버튼 클릭 이벤트
+    const worksBtn = document.querySelector('#works-btn');
+    const educationBtn = document.querySelector('#education-btn');
+    const studyBtn = document.querySelector('#study-btn');
+
+    const works = document.querySelector('#works');
+    const education = document.querySelector('#education');
+    const study = document.querySelector('#study');
+
+    worksBtn.addEventListener('click', () => {
+        works.style.display = "block";
+        education.style.display = "none";
+        study.style.display = "none";
+        worksBtn.classList.add("active");
+        educationBtn.classList.remove("active");
+        studyBtn.classList.remove("active");
+    });
+
+    educationBtn.addEventListener('click', () => {
+        works.style.display = "none";
+        education.style.display = "block";
+        study.style.display = "none";
+        worksBtn.classList.remove("active");
+        educationBtn.classList.add("active");
+        studyBtn.classList.remove("active");
+    });
+
+    studyBtn.addEventListener('click', () => {
+        works.style.display = "none";
+        education.style.display = "none";
+        study.style.display = "block";
+        worksBtn.classList.remove("active");
+        educationBtn.classList.remove("active");
+        studyBtn.classList.add("active");
+    });
+
+
 });
