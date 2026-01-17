@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async() => {
     const menuToggle = document.querySelector('#mobile-menu');
     const navLinks = document.querySelector('.nav-links');
 
@@ -53,5 +53,27 @@ document.addEventListener('DOMContentLoaded', () => {
         studyBtn.classList.add("active");
     });
 
+    // project 데이터 동적 바인딩
+    const result = await getData("works");
+    console.log("result ==== ", await result.json());
 
 });
+
+
+const getData = async(param) => {
+    const url = "/data/data.json";
+    let result = "";
+    switch (param) {
+        case "works":
+            result = fetch(url);
+            break;
+
+        case "education" :
+            break;
+
+        default:
+            break;
+    }
+
+    return result;
+}
