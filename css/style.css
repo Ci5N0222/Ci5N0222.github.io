@@ -242,6 +242,18 @@ nav {
 
 .license-list li { margin-bottom: 6px; }
 
+.license-list a {
+    color: var(--blue);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+}
+
+.license-list a:hover,
+.license-list a:focus-visible {
+    color: #9cd0ff;
+}
+
 #projects > .project-nav {
     display: flex;
     justify-content: space-between;
