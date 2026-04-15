@@ -283,6 +283,19 @@ nav {
     border-radius: 10px;
     overflow: hidden;
     background: rgba(19, 29, 42, 0.7);
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    border-color: #3a5c80;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.project-card:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
 }
 
 .project-info { padding: 16px; }
@@ -301,6 +314,126 @@ nav {
     margin-right: 6px;
 }
 
+.modal-open {
+    overflow: hidden;
+}
+
+.project-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1400;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.project-modal.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.project-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 12, 18, 0.72);
+    backdrop-filter: blur(3px);
+}
+
+.project-modal__dialog {
+    position: relative;
+    width: min(760px, calc(100% - 32px));
+    max-height: min(88vh, 760px);
+    margin: 6vh auto;
+    overflow-y: auto;
+    border: 1px solid #2f435b;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #101823 0%, #0d1420 100%);
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.45);
+    padding: 22px 22px 20px;
+}
+
+.project-modal__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: 1px solid #344c69;
+    background: #142134;
+    color: #c9dcf1;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.project-modal__label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--blue);
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+}
+
+.project-modal__title {
+    font-size: clamp(1.3rem, 1.12rem + 0.75vw, 1.8rem);
+    line-height: 1.45;
+    color: #e7eff8;
+    margin-bottom: 8px;
+    padding-right: 42px;
+}
+
+.project-modal__summary {
+    color: #afc4db;
+    margin-bottom: 14px;
+    line-height: 1.7;
+}
+
+.project-modal__details {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 18px;
+    color: #d0deed;
+    line-height: 1.7;
+}
+
+.project-modal__details li {
+    margin-bottom: 5px;
+}
+
+.project-modal__stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-modal__stack .tag {
+    margin-right: 0;
+}
+
+.project-modal__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    padding: 9px 14px;
+    border-radius: 10px;
+    border: 1px solid #3f6387;
+    background: linear-gradient(180deg, #1a2f46, #15273a);
+    color: #d7e7f7;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.84rem;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-modal__link:hover {
+    border-color: #67b3ff;
+    transform: translateY(-1px);
+}
+
+.project-modal__link.is-hidden {
+    display: none;
+}
+
 footer {
     text-align: center;
     padding: 22px;
@@ -314,11 +447,14 @@ footer {
     .nav-links {
         position: absolute;
         top: 64px;
-        left: 0;
-        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
         background: #111927;
         border: 1px solid var(--line);
-        border-radius: 0 0 10px 10px;
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
         flex-direction: column;
         gap: 0;
         text-align: center;
@@ -335,8 +471,14 @@ footer {
     }
 
     .nav-links li {
-        padding: 12px 0;
+        padding: 0;
         width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
     }
 
     .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
@@ -397,5 +539,36 @@ footer {
 
     .section-title {
         font-size: 1.35rem;
+    }
+
+    .project-modal__dialog {
+        width: calc(100% - 20px);
+        margin: 4vh auto;
+        max-height: 92vh;
+        padding: 16px 14px 14px;
+        border-radius: 12px;
+    }
+
+    .project-modal__title {
+        font-size: clamp(1.16rem, 1rem + 1.2vw, 1.45rem);
+        line-height: 1.5;
+        padding-right: 36px;
+    }
+
+    .project-modal__summary,
+    .project-modal__details {
+        font-size: 0.9rem;
+    }
+
+    .project-modal__link {
+        width: 100%;
+        margin-top: 14px;
+    }
+
+    .project-modal__close {
+        top: 8px;
+        right: 8px;
+        width: 34px;
+        height: 34px;
     }
 }

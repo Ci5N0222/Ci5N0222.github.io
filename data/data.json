@@ -1,13 +1,127 @@
 {
-  "works" : {
-    "data" : "works"
-  },
-
-  "education" : {
-    "data" : "education"
-  },
-
-  "study" : {
-    "data" : "study"
-  }
+  "works": [
+    {
+      "idx": 1,
+      "title": "[프리랜서] 교원 - 도요새",
+      "overview": "신규 기능 개발과 운영 안정화를 담당했습니다.",
+      "details": [
+        "기존 운영 이슈 분석 및 개선",
+        "신규 학습 기능 개발",
+        "VOC 처리 및 사용자 피드백 반영"
+      ],
+      "stack": ["Java", "JSP", "Spring", "Oracle"],
+      "link": ""
+    },
+    {
+      "idx": 2,
+      "title": "[NextICT] 교원 - 퍼펙트 문해",
+      "overview": "관리자 페이지 신규 화면과 운영 기능을 개발했습니다.",
+      "details": [
+        "관리자 핵심 화면 구현",
+        "요구사항 변경 대응",
+        "운영 중 데이터 이슈 대응"
+      ],
+      "stack": ["Java", "Thymeleaf", "Spring Boot", "Oracle"],
+      "link": ""
+    },
+    {
+      "idx": 3,
+      "title": "[NextICT] KTT - GiGAeyes",
+      "overview": "서비스 운영과 장애 대응을 중심으로 업무를 수행했습니다.",
+      "details": [
+        "이슈 트래킹 및 원인 분석",
+        "정기 점검 및 운영 안정화 지원",
+        "운영 리포트 작성"
+      ],
+      "stack": ["Linux", "PostgreSQL"],
+      "link": ""
+    },
+    {
+      "idx": 4,
+      "title": "[ABC] KTHULU",
+      "overview": "블록체인 지갑 기능 전반을 개발했습니다.",
+      "details": [
+        "지갑 생성/복구, 토큰 전송/교환 등 로직 구현",
+        "앱-서버 연동 API 개발",
+        "플랫폼별 이슈 대응"
+      ],
+      "stack": ["Kotlin", "Swift", "NodeJs", "MariaDB"],
+      "link": ""
+    },
+    {
+      "idx": 5,
+      "title": "[ABC] Trans Bridge",
+      "overview": "테스트넷 구축과 연동 기능을 개발했습니다.",
+      "details": [
+        "브리지 테스트넷 구축",
+        "트랜잭션 검증 로직 구현"
+      ],
+      "stack": ["Java", "Spring Boot", "MariaDB"],
+      "link": ""
+    },
+    {
+      "idx": 6,
+      "title": "[ABC] 효성 - 블록체인 노드 구축",
+      "overview": "노드 구축과 현황 모니터링 페이지를 개발했습니다.",
+      "details": [
+        "노드 인프라 구축",
+        "모니터링 대시보드 개발",
+        "운영 매뉴얼 정리"
+      ],
+      "stack": ["Java", "Thymeleaf", "Spring Boot", "MariaDB"],
+      "link": ""
+    }
+  ],
+  "education": [
+    {
+      "idx": 1,
+      "title": "E-Commerce",
+      "overview": "가구 커머스 웹서비스를 팀 프로젝트로 개발했습니다.",
+      "details": [
+        "상품/주문 핵심 기능 개발",
+        "권한별 관리자 화면 구현",
+        "API 연동 및 테스트"
+      ],
+      "stack": ["Java", "React", "Spring Boot", "Oracle"],
+      "link": "https://github.com/Ci5N0222/Hows"
+    },
+    {
+      "idx": 2,
+      "title": "ERP",
+      "overview": "그룹웨어 기반 ERP 기능을 구현했습니다.",
+      "details": [
+        "전자결재/게시판 기능 구현",
+        "사내 업무 프로세스 화면 구성",
+        "운영 데이터 구조 설계"
+      ],
+      "stack": ["Java", "React", "Spring Boot", "Oracle"],
+      "link": "https://github.com/GroupwareTeamClover/GroupwareClover"
+    },
+    {
+      "idx": 3,
+      "title": "Game - Platform",
+      "overview": "게임 플랫폼 및 게임 기능을 개발했습니다.",
+      "details": [
+        "플랫폼 공통 기능 구현",
+        "게임 핵심 로직 개발",
+        "데이터 모델 설계"
+      ],
+      "stack": ["Java", "Oracle"],
+      "link": "https://github.com/Ci5N0222/Wolf-Project"
+    }
+  ],
+  "study": [
+    {
+      "idx": 1,
+      "title": "K-Degital",
+      "overview": "기초부터 실무까지 개발 기본기를 집중 학습했습니다.",
+      "details": [
+        "백엔드/프론트엔드 통합 학습",
+        "개인/팀 프로젝트 수행",
+        "코드 리뷰 및 리팩토링 경험"
+      ],
+      "stack": ["Java", "Spring Boot", "Oracle", "React", "HTML", "CSS", "JavaScript"],
+      "link": "https://github.com/Ci5N0222/Academy_Study"
+    }
+  ]
 }
