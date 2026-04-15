@@ -1,21 +1,81 @@
-/* 기본 스타일 초기화 */
+:root {
+    --bg: #0c1118;
+    --panel: #121a24;
+    --line: #1e293b;
+    --text: #e5edf7;
+    --muted: #9fb0c4;
+    --green: #48d597;
+    --yellow: #ffcf5a;
+    --blue: #67b3ff;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Pretendard', sans-serif; line-height: 1.6; color: #333; background-color: #f9f9f9; }
+
+body {
+    font-family: "IBM Plex Sans KR", sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: radial-gradient(circle at 15% -10%, #1f2a3c 0%, transparent 35%), var(--bg);
+}
+
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
-/* 레이아웃 */
-.container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
-section { padding: 80px 0; border-bottom: 1px solid #eee; }
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 18px;
+}
 
-/* 헤더/네비게이션 */
-header { background: #fff; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); padding: 0 20px}
-nav { display: flex; justify-content: space-between; align-items: center; height: 60px; position: relative; }
-.logo { font-size: 1.5rem; font-weight: bold; color: #2d3436; }
-.nav-links { display: flex; gap: 20px; }
-.nav-links a:hover { color: #0984e3; transition: 0.3s; }
+section {
+    padding: 48px 0;
+    border-bottom: 1px solid var(--line);
+    scroll-margin-top: 72px;
+}
 
-/* 햄버거 버튼 (기본 숨김) */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: transparent;
+    backdrop-filter: none;
+    border-bottom: 1px solid transparent;
+    transition: background 0.18s ease, backdrop-filter 0.18s ease, border-color 0.18s ease;
+}
+
+.site-header.scrolled,
+.site-header.menu-open {
+    background: rgba(12, 17, 24, 0.88);
+    backdrop-filter: blur(10px);
+    border-bottom-color: var(--line);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 64px;
+    position: relative;
+}
+
+.logo {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 1rem;
+    color: var(--green);
+    letter-spacing: 0.4px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    color: var(--muted);
+}
+
+.nav-links a:hover {
+    color: var(--blue);
+    transition: 0.2s;
+}
+
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -23,112 +83,319 @@ nav { display: flex; justify-content: space-between; align-items: center; height
     gap: 5px;
     padding: 5px;
 }
+
 .menu-toggle .bar {
     width: 25px;
     height: 3px;
-    background-color: #333;
+    background-color: #95acc4;
     transition: 0.3s;
     border-radius: 2px;
 }
 
-/* 히어로 섹션 */
-#home { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #74b9ff, #0984e3); color: white; }
-.hero-content h1 { font-size: 3rem; margin-bottom: 10px; }
-.hero-content p { font-size: 1.2rem; opacity: 0.9; }
+#home {
+    min-height: 62vh;
+    display: flex;
+    align-items: center;
+}
 
-/* 섹션 제목 */
-.section-title { text-align: center; margin-bottom: 50px; font-size: 2rem; }
+#home .container {
+    width: 100%;
+}
 
-/* 기술 스택 */
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; text-align: center; }
-.skill-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
-.skill-card:hover { transform: translateY(-5px); }
+.terminal-shell {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(18, 26, 36, 0.96), rgba(11, 16, 24, 0.96));
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+}
 
-/* 프로젝트 섹션 */
-.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.project-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-.project-img { height: 200px; background: #dfe6e9; display: flex; align-items: center; justify-content: center; color: #b2bec3; }
-.project-info { padding: 20px; }
-.project-info h3 { margin-bottom: 10px; }
-.project-tags { margin-top: 15px; }
-.tag { display: inline-block; background: #eee; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 5px; }
+.terminal-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
 
-/* 연락처 */
-#contact { text-align: center; }
-.contact-links { margin-top: 20px; }
-.contact-links a { margin: 0 15px; font-size: 1.1rem; color: #0984e3; font-weight: bold; }
+.lights { display: flex; gap: 6px; }
+.light { width: 10px; height: 10px; border-radius: 50%; }
+.l1 { background: #ff5f57; }
+.l2 { background: #febc2e; }
+.l3 { background: #28c840; }
 
+.hero-content {
+    padding: 28px;
+}
+
+.hero-content p {
+    font-size: clamp(0.92rem, 0.85rem + 0.4vw, 1.05rem);
+    line-height: 1.75;
+}
+
+.command-line {
+    font-family: "IBM Plex Mono", monospace;
+    color: var(--green);
+    font-size: clamp(0.84rem, 0.78rem + 0.35vw, 1rem);
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: reveal 0.55s forwards;
+}
+
+.command-line:nth-child(2) { animation-delay: 0.15s; }
+.command-line:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes reveal {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content h1 {
+    margin-top: 14px;
+    font-size: clamp(1.75rem, 1.15rem + 2.9vw, 3.2rem);
+    line-height: 1.34;
+    margin-bottom: 12px;
+    white-space: pre-line;
+    word-break: keep-all;
+}
+
+.hero-content h1.is-typing {
+    border-right: 2px solid var(--green);
+    padding-right: 6px;
+    animation: caret-blink 0.85s step-end infinite;
+}
+
+@keyframes caret-blink {
+    0%,
+    45% {
+        border-right-color: var(--green);
+    }
+
+    46%,
+    100% {
+        border-right-color: transparent;
+    }
+}
+
+.hero-subtitle {
+    color: var(--muted);
+    font-size: clamp(1rem, 0.92rem + 0.75vw, 1.28rem);
+    line-height: 1.75;
+    white-space: pre-line;
+}
+
+.hero-tag {
+    display: inline-block;
+    margin-top: 14px;
+    font-family: "IBM Plex Mono", monospace;
+    color: var(--blue);
+    border: 1px dashed var(--blue);
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-size: clamp(0.74rem, 0.69rem + 0.33vw, 0.9rem);
+}
+
+.section-title {
+    text-align: left;
+    margin-bottom: 16px;
+    font-size: 1.8rem;
+    font-family: "IBM Plex Mono", monospace;
+    color: var(--yellow);
+}
+
+.terminal-card {
+    border: 1px solid var(--line);
+    background: rgba(19, 29, 42, 0.7);
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.terminal-card h3 {
+    font-family: "IBM Plex Mono", monospace;
+    color: var(--yellow);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.terminal-card p,
+.terminal-card li { color: #c8d6e5; }
+
+.timeline > li {
+    border-left: 2px solid #2c3f56;
+    padding-left: 10px;
+    margin-bottom: 12px;
+}
+
+.timeline h4 {
+    margin-bottom: 6px;
+    color: #dce8f4;
+}
+
+.timeline > li > ul,
+.license-list {
+    margin-left: 14px;
+    list-style: disc;
+}
+
+.license-list li { margin-bottom: 6px; }
 
 #projects > .project-nav {
     display: flex;
     justify-content: space-between;
-    gap: 15px;
-    padding: 20px 0 20px 0;
+    gap: 12px;
+    padding: 8px 0 20px;
 }
 
 #projects > .project-nav > div {
-    background: white; 
-    padding: 20px; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-    transition: transform 0.3s; 
+    border: 1px solid var(--line);
+    background: rgba(19, 29, 42, 0.7);
+    border-radius: 8px;
+    padding: 12px;
     width: 100%;
     text-align: center;
     cursor: pointer;
+    color: #bdd0e4;
+    transition: 0.2s;
+}
+
+#projects > .project-nav > div:hover {
+    border-color: #325070;
+    color: #e5edf7;
 }
 
 #projects > .project-nav .active {
-    color: orange;
-    font-weight: 900;
+    color: var(--blue);
+    border-color: var(--blue);
+    font-weight: 700;
 }
 
-/* 반응형 스타일 */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+}
+
+.project-card {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(19, 29, 42, 0.7);
+}
+
+.project-info { padding: 16px; }
+.project-info h3 { margin-bottom: 8px; }
+.project-info p { color: #c8d6e5; }
+
+.project-tags { margin-top: 12px; }
+
+.tag {
+    display: inline-block;
+    border: 1px solid #38577a;
+    color: #b8d7f8;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    margin-right: 6px;
+}
+
+footer {
+    text-align: center;
+    padding: 22px;
+    color: #90a7be;
+    font-size: 0.9rem;
+}
+
 @media (max-width: 768px) {
     .menu-toggle { display: flex; }
 
-    /* 애니메이션을 위한 nav-links 설정 */
     .nav-links {
         position: absolute;
-        top: 60px;
+        top: 64px;
         left: 0;
         width: 100%;
-        background: #fff;
+        background: #111927;
+        border: 1px solid var(--line);
+        border-radius: 0 0 10px 10px;
         flex-direction: column;
         gap: 0;
         text-align: center;
-        max-height: 0; /* 초기 상태: 높이 0 */
-        overflow: hidden; /* 넘치는 내용 숨김 */
-        opacity: 0; /* 투명하게 */
-        transition: all 0.4s ease-in-out; /* 부드러운 전환 효과 */
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
     }
 
-    /* 메뉴 활성화 상태 */
     .nav-links.active {
-        width: 100%;
-        max-height: 400px; /* 메뉴가 다 펼쳐질 충분한 높이 */
+        max-height: 360px;
         opacity: 1;
-        padding: 20px 0;
+        padding: 10px 0;
     }
 
     .nav-links li {
-        padding: 15px 0;
+        padding: 12px 0;
         width: 100%;
     }
 
-    .hero-content h1 { font-size: 2rem; }
-    
-    /* 햄버거 버튼 'X' 모양 변형 애니메이션 (선택 사항) */
     .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
     .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    .hero-content h1 { font-size: 2rem; margin-bottom: 10px; }
-    .hero-content p { font-size: 1.2rem; opacity: 0.9; }
+    #projects > .project-nav {
+        flex-direction: column;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(1.95rem, 1.36rem + 2.95vw, 2.9rem);
+        line-height: 1.44;
+        margin-top: 16px;
+        margin-bottom: 14px;
+    }
+
+    .hero-content p {
+        font-size: clamp(0.86rem, 0.81rem + 0.35vw, 0.98rem);
+        line-height: 1.7;
+    }
+
+    .hero-tag {
+        font-size: clamp(0.72rem, 0.68rem + 0.28vw, 0.84rem);
+    }
+
+    .terminal-url {
+        font-size: 0.75rem;
+        max-width: 52%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: right;
+    }
 }
 
-
 @media (max-width: 520px) {
-    .hero-content h1 { font-size: 1.4rem; margin-bottom: 10px; }
-    .hero-content p { font-size: 1rem; opacity: 0.9; }
+    .hero-content {
+        padding: 20px 16px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(1.8rem, 1.28rem + 2.65vw, 2.35rem);
+        line-height: 1.5;
+        margin-top: 18px;
+        margin-bottom: 16px;
+    }
+
+    .hero-content p {
+        font-size: clamp(0.7rem, 0.67rem + 0.38vw, 0.82rem);
+        line-height: 1.6;
+    }
+
+    .hero-tag {
+        padding: 6px 10px;
+        font-size: clamp(0.7rem, 0.67rem + 0.45vw, 0.8rem);
+    }
+
+    .section-title {
+        font-size: 1.35rem;
+    }
 }
